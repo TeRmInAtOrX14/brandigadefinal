@@ -42,7 +42,14 @@ document.addEventListener('DOMContentLoaded', function () {
     counters.forEach(c => observer.observe(c));
   }
 
-  // ROI Calculator
+  // Back‑to‑top button
+  const backTopBtn = document.querySelector('.backtop-float');
+  if (backTopBtn) {
+    backTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
   function updateROI() {
     const inv = parseFloat(document.getElementById('r-inv')?.value || 3000);
     const deal = parseFloat(document.getElementById('r-deal')?.value || 25000);
